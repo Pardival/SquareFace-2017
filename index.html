@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SquareFace.Pardival</title>
+	<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli|Yatra+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Muli|Yatra+One" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body id="body" style="margin: 0; padding: 0; overflow: hidden; background-color: black;">
+	<center>
+		<div id='content_info' style="width: 700px; height: 475px; background-color: #1700c7; display: inline-block; position: relative; top: 100px; border:2px solid green ;">
+			<center><p style="color:#fdff00; font-size: xx-large; font-family:'Bungee Inline';">SquareFace</p></center>
+			<p style="font-size:x-large; color:#ea82e5 ;font-family: 'Yatra One';">Objectif: rester le plus longtemps dans le jeu</p>
+			<center><button class="start" style='width: 100px; height: 50px; border:2px solid #fdff00; background-color: #d03e19; color: #db851c; font-family:"Yatra One";' onclick="game();">Jouer</button></center>
+			<form>
+				<input id="pseudo" type="text" name="name" placeholder="Name" style='border:2px solid #fdff00; background-color: #1491ff; color: #d03e19; font-family:"Yatra One"; margin-top: 10px;'>
+			</form>
+			<p style="font-size:small; color:#fdff00 ;font-family: 'Yatra One';">© Copyright Pardival 2017</p>
+		</div>
+	</center>
+	<p id='time_show' style="position: fixed; left: 95%; display: none; color: #46bfee; font-size: x-large; font-family:''Yatra One;">0</p>
+	<canvas id='lol' style="background:black; border: 4px, solid, green;"></canvas>
+<script src="canvas3.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+	var body = document.getElementById('body');
+	var can = document.getElementById('lol');
+	function changeColor(){
+		var numb_rd = Math.floor(Math.random() * (1 - 6 + 1)) + 6;
+
+		if(numb_rd ===1){
+			body.style.backgroundColor = "#fdff00";
+			can.style.backgroundColor = "#fdff00";
+		}
+
+		if(numb_rd ===2){
+			body.style.backgroundColor ="#ea82e5" ;
+			can.style.backgroundColor ="#ea82e5" ;
+		}
+
+		if(numb_rd ===3){
+			body.style.backgroundColor ="#46bfee" ;
+			can.style.backgroundColor = "#46bfee";
+		}
+
+		if(numb_rd ===4){
+			body.style.backgroundColor ="#d03e19" ;
+			can.style.backgroundColor = "#d03e19";
+		}
+
+		if(numb_rd ===5){
+			body.style.backgroundColor ="#db851c" ;
+			can.style.backgroundColor = "#db851c";
+		}
+
+		if(numb_rd ===6){
+			body.style.backgroundColor ="#000000" ;
+			can.style.backgroundColor = "#000000";
+		}
+
+	}
+
+	var test= setInterval(changeColor,250);
+
+	$(document).ready(function(){
+			$('.start').click(function(){
+				clearInterval(test);
+				body.style.backgroundColor ="#000000" ;
+				can.style.backgroundColor = "#000000";
+			})
+		})
+</script>
